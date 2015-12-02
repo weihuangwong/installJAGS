@@ -94,7 +94,7 @@ while true; do
             echo -e "Running test script..."
             add R
             R CMD BATCH ~/installJAGS/test_jags.R
-            more ~/installJAGS/test_jags.Rout
+            cat ~/installJAGS/test_jags.Rout
             echo -e "Test completed; verify that output makes sense."
             break;;
 
