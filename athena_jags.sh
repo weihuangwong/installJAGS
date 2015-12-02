@@ -67,4 +67,19 @@ while true; do
 done
 echo ""
 
+while true; do
+    read -p "\
+@ Do you need to install rjags and R2jags?
+[y/n]" yn
+    case $yn in
+        [Yy]* ) 
+            R CMD BATCH ~/installJAGS/athena_jags.R
+            break;;
+
+        [Nn]* ) break;;
+        * ) ansYN ;;
+    esac
+done
+echo ""
+
 
