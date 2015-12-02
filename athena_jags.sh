@@ -92,6 +92,7 @@ while true; do
     case $yn in
         [Yy]* ) 
             echo -e "Running test script..."
+            add R
             R CMD BATCH ~/installJAGS/test_jags.R
             more ~/installJAGS/test_jags.Rout
             echo -e "Test completed; verify that output makes sense."
