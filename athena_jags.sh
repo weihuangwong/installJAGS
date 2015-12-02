@@ -11,7 +11,7 @@ ansYN() {
 ## =============
 ## Variables
 ## =============
-JAGS-vers=4.0.1
+JAGSvers=4.0.1
 
 while true; do
     read -p "\
@@ -20,7 +20,7 @@ while true; do
     case $yn in
         [Yy]* )
             mkdir ~/JAGS
-            wget http://www.mit.edu/~wwong/17804/JAGS/JAGS-${JAGS-vers}.tar.gz -P ~/JAGS
+            wget http://www.mit.edu/~wwong/17804/JAGS/JAGS-${JAGSvers}.tar.gz -P ~/JAGS
             break;;
 
         [Nn]* ) break;;
@@ -36,8 +36,8 @@ while true; do
     case $yn in
         [Yy]* )            
             cd ~/JAGS
-            tar xfvz JAGS-${JAGS-vers}.tar.gz
-            cd JAGS-${JAGS-vers}
+            tar xfvz JAGS-${JAGSvers}.tar.gz
+            cd JAGS-${JAGSvers}
             export JAGS_HOME=$HOME/JAGS
             export PATH=$PATH:~/JAGS/bin
             ./configure --prefix=$JAGS_HOME
