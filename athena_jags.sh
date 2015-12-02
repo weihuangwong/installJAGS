@@ -84,3 +84,21 @@ while true; do
     esac
 done
 echo ""
+
+while true; do
+    read -p "\
+@ Do you want to test R2jags?
+[y/n]" yn
+    case $yn in
+        [Yy]* ) 
+            echo -e "Running test script..."
+            R CMD BATCH ~/installJAGS/test_jags.R
+            more ~/installJAGS/test_jags.Rout
+            echo -e "Test completed; verify that output makes sense."
+            break;;
+
+        [Nn]* ) break;;
+        * ) ansYN ;;
+    esac
+done
+echo ""
