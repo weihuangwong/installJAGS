@@ -44,6 +44,7 @@ while true; do
             make
             make install
             export PKG_CONFIG_PATH=~/JAGS/lib/pkgconfig
+            cd ~
             break;;
 
         [Nn]* ) break;;
@@ -73,7 +74,9 @@ while true; do
 [y/n]" yn
     case $yn in
         [Yy]* ) 
+            echo -e "Installing packages..."
             R CMD BATCH ~/installJAGS/athena_jags.R
+            echo -e "Done."
             break;;
 
         [Nn]* ) break;;
@@ -81,5 +84,3 @@ while true; do
     esac
 done
 echo ""
-
-
